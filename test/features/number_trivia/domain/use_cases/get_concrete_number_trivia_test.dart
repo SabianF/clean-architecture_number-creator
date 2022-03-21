@@ -38,9 +38,11 @@ void main() {
       when(mockNumberTriviaRepository?.getRandomNumberTrivia(any))
         .thenAnswer((_) async => const Right(tNumberTrivia));
   
-      // todo: act
+      final result = await useCase?.execute(number: tNumber);
   
-      // todo: assert
+      expect(result, Right(tNumberTrivia));
+      verify(mockNumberTriviaRepository?.getConcreteNumberTrivia(tNumber));
+      verifyNoMoreInteractions(mockNumberTriviaRepository);
     },
   );
 }
