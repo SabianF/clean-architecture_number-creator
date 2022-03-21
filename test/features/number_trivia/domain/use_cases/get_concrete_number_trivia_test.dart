@@ -15,8 +15,8 @@ class MockNumberTriviaRepository
 // we can do dependency injection ("loose coupling") using get_it
 void main() {
 
-  GetConcreteNumberTrivia use_case;
-  MockNumberTriviaRepository mockNumberTriviaRepository;
+  GetConcreteNumberTrivia? use_case;
+  MockNumberTriviaRepository? mockNumberTriviaRepository;
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
@@ -35,7 +35,7 @@ void main() {
     'should get trivia text for the number from the repository',
     () async {
   
-      when(mockNumberTriviaRepository.getRandomNumberTrivia(any))
+      when(mockNumberTriviaRepository?.getRandomNumberTrivia(any))
         .thenAnswer((_) async => Right(tNumberTrivia));
   
       // todo: act

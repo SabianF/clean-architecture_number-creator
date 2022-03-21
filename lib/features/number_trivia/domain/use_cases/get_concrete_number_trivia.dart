@@ -5,5 +5,5 @@ class GetConcreteNumberTrivia {
 
   const GetConcreteNumberTrivia(this.repository);
 
-  final NumberTriviaRepository repository;
+  final NumberTriviaRepository? repository;
 }
