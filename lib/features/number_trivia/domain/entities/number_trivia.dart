@@ -7,7 +7,7 @@ import 'package:meta/meta.dart';
 /// Gets data from the NumberCreator repository
 class NumberTrivia extends Equatable {
 
-  NumberTrivia({
+  const NumberTrivia({
     @required this.text,
     @required this.number,
   });
