@@ -15,12 +15,12 @@ class MockNumberTriviaRepository
 // we can do dependency injection ("loose coupling") using get_it
 void main() {
 
-  GetConcreteNumberTrivia? use_case;
+  GetConcreteNumberTrivia? useCase;
   MockNumberTriviaRepository? mockNumberTriviaRepository;
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
-    use_case = GetConcreteNumberTrivia(mockNumberTriviaRepository);
+    useCase = GetConcreteNumberTrivia(mockNumberTriviaRepository);
   });
 
   const tNumber = 1;
