@@ -14,23 +14,23 @@ dependencies:
     sdk: flutter
   
   # Service locator
-  get_it: ^2.0.1
+  get_it: ^7.2.0
 
   # State management
   bloc: ^8.0.3
 
   # Value-equality
-  equatable: ^0.4.0
+  equatable: ^2.0.3
 
   # Functional programming
-  dartz: ^0.8.6
+  dartz: ^0.10.1
 
   # Remote API
-  connectivity: ^0.4.3+7
-  http: ^0.12.0+2
+  connectivity: ^3.0.6
+  http: ^0.13.4
 
   # Local cache
-  shared_preferences: ^0.5.3+4
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
 
@@ -38,7 +38,7 @@ dev_dependencies:
     sdk: flutter
 
   # Code standards
-  flutter_lints: ^1.0.0
+  flutter_lints: ^1.0.4
 
   # API Fakes, Mocks, behavior verification, and stubbing
   mockito: ^5.1.0
