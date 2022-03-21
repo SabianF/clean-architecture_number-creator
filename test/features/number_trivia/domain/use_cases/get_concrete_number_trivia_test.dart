@@ -36,7 +36,7 @@ void main() {
     'should get trivia text for the number from the repository',
     () async {
   
-      when(mockNumberTriviaRepository?.getRandomNumberTrivia(tNumber))
+      when(mockNumberTriviaRepository?.getConcreteNumberTrivia(tNumber))
         .thenAnswer((_) async => const Right(tNumberTrivia));
   
       final Either<Failure?, NumberTrivia?>? result = await useCase?.execute(number: tNumber);
