@@ -1,4 +1,5 @@
 
+import 'package:clean_architecture/core/error/failures.dart';
 import 'package:clean_architecture/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:clean_architecture/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:clean_architecture/features/number_trivia/domain/use_cases/get_concrete_number_trivia.dart';
@@ -23,10 +24,10 @@ void main() {
     useCase = GetConcreteNumberTrivia(mockNumberTriviaRepository);
   });
 
-  const tNumber = 1;
-  const tTrivia = 'This is a test trivia text';
+  const int?    tNumber = 1;
+  const String? tTrivia = 'This is a test trivia text';
 
-  const tNumberTrivia = NumberTrivia(
+  const NumberTrivia? tNumberTrivia = NumberTrivia(
     text  : tTrivia,
     number: tNumber,
   );
@@ -35,12 +36,12 @@ void main() {
     'should get trivia text for the number from the repository',
     () async {
   
-      when(mockNumberTriviaRepository?.getRandomNumberTrivia(any))
+      when(mockNumberTriviaRepository?.getRandomNumberTrivia(tNumber))
         .thenAnswer((_) async => const Right(tNumberTrivia));
   
-      final result = await useCase?.execute(number: tNumber);
+      final Either<Failure?, NumberTrivia?>? result = await useCase?.execute(number: tNumber);
   
-      expect(result, Right(tNumberTrivia));
+      expect(result, const Right(tNumberTrivia));
       verify(mockNumberTriviaRepository?.getConcreteNumberTrivia(tNumber));
       verifyNoMoreInteractions(mockNumberTriviaRepository);
     },
