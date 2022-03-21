@@ -36,7 +36,7 @@ void main() {
     () async {
   
       when(mockNumberTriviaRepository?.getRandomNumberTrivia(any))
-        .thenAnswer((_) async => Right(tNumberTrivia));
+        .thenAnswer((_) async => const Right(tNumberTrivia));
   
       // todo: act
   
