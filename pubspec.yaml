@@ -22,7 +22,7 @@ dependencies:
   # Value-equality
   equatable: ^2.0.3
 
-  # Functional programming
+  # Functional programming for error handling using error objects
   dartz: ^0.10.1
 
   # Remote API
